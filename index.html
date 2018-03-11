@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link href="img/start.png" rel="shortcut icon" type="image/png">
+  <title>Windows</title>
+</head>
+<body onload="startTime(); bootSoundWait(); wallpaperWait();">
+
+  <div id="boot">
+    <img src="img/dnomaid.png" height="250px">
+    <p class="bootspinner"><i class="fa fa-spinner fa-pulse fa-5x fa-fw" style="color:white"></i></p>
+  </div>
+
+  <div id="windows">
+
+  <!--<div id="startmenu">
+    <div id="startleft">
+      <p title="Expand" id="startexpandbutt"><img src="img/menu.png" ></img> <span class="startexpand">START</span></p>
+      <p><img src="https://source.unsplash.com/500x500/?face"  id="accountimg"></img> <span class="startexpand">Bill Gates</span></p>
+      <p title="Documents"><img src="img/docs.png" ></img> <span class="startexpand">Documents</span></p>
+      <p title="Downloads"><img src="img/download.png" ></img> <span class="startexpand">Downloads</span></p>
+      <p title="Music"><img src="img/music.png" ></img> <span class="startexpand">Music</span></p>
+      <p title="File Explorer"><img src="img/explorer-white.png" ></img> <span class="startexpand">File Explorer</span></p>
+      <p title="Settings"><img src="img/cog.png" ></img> <span class="startexpand">Settings</span></p>
+      <p title="Power"><img src="img/power.png" ></img> <span class="startexpand">Power</span></p>
+    </div>
+    <div id="startright">
+      <p>Recently Added</p>
+      <p><img src="img/cog.png"></img>Cool Program</p>
+      <p><img src="img/cog.png"></img>TorrentClient9000</p>
+      <p><img src="img/cog.png"></img>BestWebBrowser</p>
+      <p><br></p>
+      <p>Most used</p>
+      <p><img src="img/cog.png"></img>SinglesInUrArea</p>
+      <p><img src="img/cog.png"></img>Water Game Launcher</p>
+      <p><img src="img/cog.png"></img>Disconnect Chat</p>
+      <p><br></p>
+      <p>#</p>
+      <p><img src="img/cog.png"></img>99Bottles</p>
+      <p>A</p>
+      <p><img src="img/cog.png"></img>Adoob Adancer PDF Reader</p>
+      <p><img src="img/cog.png"></img>Adoob Before FX</p>
+      <p><img src="img/cog.png"></img>Adoob Smudge Tool</p>
+      <p>B</p>
+      <p><img src="img/cog.png"></img>Bang on Ubanto</p>
+      <p>C</p>
+      <p><img src="img/cog.png"></img>Cal Teaches Maths</p>
+      <p><img src="img/cog.png"></img>Calculator</p>
+      <p><img src="img/cog.png"></img>Cuntana</p>
+      <p>There was an error fetching more apps</p>
+    </div>
+
+    <div id="tiles">
+      <img src="img/tiles.png"></img>
+    </div>
+
+  </div>-->
+
+  <div id="icons">
+    <div class="icon">
+    <p id="bin" title="Contains files you have deleted"><img src="img/bin.png" height="50px"><br><span class="icontext">Recycle Bin</span></p>
+    </div>
+    <div class="icon">
+    <p id="notepadico" title="Location: C:\Windows\System32\notepad.exe"><img src="img/np.png" height="50px"><br><span class="icontext">Notepad</span></p>
+    </div>
+    <div class="icon">
+    <p id="powerhellico" title="Peforms object-based (command-line) functions"><img src="img/powerhell.png" height="50px"><br><span class="icontext">PowerHell</span></p>
+    </div>
+    <div class="icon">
+    <p id="navaico" title="AntiVirus program"><img src="img/nava.png" height="50px"><br><span class="icontext">Nava Shield</span></p>
+    </div>
+  </div>
+
+  <div id="notepad" class="window">
+    <div class="windowbar"><span class="windowtitle"><img src="img/np-noarrow.png" alt="Notepad"></img> Untitled - Notepad</span> <span id="buttons"><i class="min fa fa-window-minimize" id="npmin"></i><i class="max fa fa-window-maximize" id="npmax"></i><i class="restore fa fa-window-restore" id="nprestore" style="display: none;"></i><i class="close fa fa-window-close-o" id="npclose"></i></span></div>
+    <div class="innerwindow">
+      <img src="img/npbar.png" id="npbar"></img>
+      <p><iframe src="data:text/html,<html contenteditable>" frameborder="0"></iframe></p>
+    </div>
+  </div>
+
+  <div id="powerhell" class="window">
+    <div class="windowbar"><span class="windowtitle"><img src="img/powerhell.png" alt="PowerHell"></img> PowerHell - Setup</span> <span id="buttons"><i class="min fa fa-window-minimize" id="phmin"></i><i class="max fa fa-window-maximize" id="phmax"></i><i class="restore fa fa-window-restore" id="phrestore" style="display: none;"></i><i class="close fa fa-window-close-o" id="phclose"></i></span></div>
+    <div class="innerwindow">
+      <h1>PowerHell needs to access your infomation before you can use it</h1>
+      <h2>Give PowerHell access to your infomation?</h2>
+      <div class="button disabled bl" id="phye"><h1>Yes</h1></div><div class="button br" id="phno"><h1>No</h1></div>
+    </div>
+  </div>
+
+  <div id="phnotif" class="notif" style="display: none;"><h2><img src="img/powerhell.png" height="25px"> PowerHell</h2><h4>    You selected no, so PowerHell will not work.</h4></div>
+  <div id="phnotifyes" class="notif" style="display: none;"><h2><img src="img/powerhell.png" height="25px"> PowerHell</h2><h4>    This option is disabled</h4></div>
+  <div id="notinstalled" class="notif" style="display: none;"><h2>Windows</h2><h4>    App not installed</h4></div>
+  <div id="malwarefound" class="notif" style="display: none;"><h2><img src="img/avast.png" height="25px"> Found some malware</h2><h4>    Avast! is removing it</h4></div>
+  <div id="startmenu" class="notif" style="display: none;"><h2>START</h2><h4>    Start menu not installed correctly. Please insert the Windows CD and open <i>setup.exe</i> to re-install missing features.</h4></div>
+
+  <div id="taxbar">
+    <img src="img/start.png" alt="Start" id="start" title="Start"></img>
+    <img src="img/explorer.png" alt="Explorer" id="exicon" class="ticon" title="Windows Explorer"></img>
+    <img src="img/edge.png" alt="Edge" id="edicon" class="ticon" title="Microsoft Edge"></img>
+    <img src="img/store.png" alt="Store" id="sticon" class="ticon" title="Windows Store"></img>
+    <img src="img/np-noarrow.png" alt="Notepad" id="npicon" class="ticon" title="Untitled - Notepad"></img>
+    <img src="img/powerhell.png" alt="PowerHell" id="phicon" class="ticon" title="PowerHell"></img>
+    <div id="notifs"><span id="time">00:00</span></div>
+  </div>
+
+  </div>
+
+  <audio src="audio/win7.mp3"></audio>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/fade.js"></script>
+  <script src="js/window.js"></script>
+  <script src="js/start.js"></script>
+  <script src="js/bsod.js"></script>
+  <script src="js/powerhell.js"></script>
+</body>
+</html>
